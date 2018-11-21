@@ -1,6 +1,6 @@
-const express = require('express');
-const config = require('./config/config');
-const setup = require('./config/setup');
+import express from 'express';
+import config from './config/config';
+import setup from './config/setup';
 
 const app = express();
 setup(app, config);

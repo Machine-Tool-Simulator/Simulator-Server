@@ -1,9 +1,9 @@
 const COLLECTION = {
-    STATUS: "status",
+	STATUS: 'status',
 };
 
 const CONSTANTS = {
-    COLLECTION: COLLECTION
+	COLLECTION: COLLECTION
 };
 
 module.exports = CONSTANTS;

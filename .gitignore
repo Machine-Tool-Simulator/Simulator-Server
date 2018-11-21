@@ -1,5 +1,7 @@
 # Project
 /data
+/dist
+package-lock.json
 
 # Platforms
 .DS_Store
