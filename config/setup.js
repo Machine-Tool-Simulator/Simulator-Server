@@ -50,7 +50,7 @@ module.exports = function (app, config) {
 				require(controller)(app, db);
 				// import {default as func} from controller
 
-				console.log('>> Deployed controller: ' + controller + '\n');		// eslint-disable-line no-console
+				console.log('\n' + '>> Deployed controller: ' + controller);		// eslint-disable-line no-console
 				// This means "for each controller file, load that file using require, then
 				// call the default function that's exported, with app as a parameter.
 				// Those default functions just say 'hey app, use these routes.'"
