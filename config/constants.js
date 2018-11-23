@@ -1,9 +1,14 @@
+const ROUTES = {
+	INDEX: '/',
+};
+
 const COLLECTION = {
 	STATUS: 'status',
 };
 
 const CONSTANTS = {
-	COLLECTION: COLLECTION
+	ROUTES: ROUTES,
+	COLLECTION: COLLECTION,
 };
 
 module.exports = CONSTANTS;
