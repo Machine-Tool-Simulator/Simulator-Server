@@ -216,18 +216,18 @@
 		"index":13,
 		"title":"Chuck",
 		"src":"https://drive.google.com/file/d/1bNr31I9RFK3Ch8rOG_SIuMF6Ggi9QyJk/preview",
-		"text":"To load a component in the machine open the jaws with the Chuck wrench and place the component in the Chuck. Then tighten the jaws about the part. If you are working with a small diameter component, you can use a collet to secure the part instead. Collets are available in standard sizes up to one inch in the drawers next to each lathe.</br>To load a collet align the groove in the collet threads with the alignment screw in the Chuck. Then while applying pressure to the collet, tighten the wrench until the threads catch. Insert your part into the collet and then tighten the Chuck until the collet is secure.",
+		"text":"To load a component in the machine open the jaws with the Chuck wrench and place the component in the Chuck. Then tighten the jaws about the part. If you are working with a small diameter component, you can use a collet to secure the part instead. Collets are available in standard sizes up to one inch in the drawers next to each lathe.</br>To load a collet align the groove in the collet threads with the alignment screw in the Chuck. Then while applying pressure to the collet, tighten the wrench until the threads catch. Insert your part into the collet and then tighten the Chuck until the collet is secure."
 	},
 	{
 		"index":14,
 		"title":"X Zero Demo",
 		"src":"https://drive.google.com/file/d/1vP4tao9LjsF_8KSq-y5N5Iv5cLZq4cRu/preview",
-		"text":"A quick way to zero the tool in either direction is to bring the tool near the part and then use a piece of paper to detect when the tool comes in contact. You can then set the X or Z position by pressing X or Z and entering the known value. This is a useful technique because it does not require any material to be removed from the part. However, if a truly accurate position is required, you will need to make a new cut in the component and measure its true dimensions.</br>To do this turn the machine on and remove a small amount of material. Then back the tool off the part without changing the dimensions you were trying to measure. Turn the spindle off and measure the true size of the cut which you have just made with a pair of micrometers. Enter the measured value of the new cut into the computer.",
+		"text":"A quick way to zero the tool in either direction is to bring the tool near the part and then use a piece of paper to detect when the tool comes in contact. You can then set the X or Z position by pressing X or Z and entering the known value. This is a useful technique because it does not require any material to be removed from the part. However, if a truly accurate position is required, you will need to make a new cut in the component and measure its true dimensions.</br>To do this turn the machine on and remove a small amount of material. Then back the tool off the part without changing the dimensions you were trying to measure. Turn the spindle off and measure the true size of the cut which you have just made with a pair of micrometers. Enter the measured value of the new cut into the computer."
 	},
 	{
 		"index":15,
 		"title":"End",
 		"src":"https://drive.google.com/file/d/1x1V_azN_2QspTQOpdeY2PmlUX2QXsQ1h/preview",
-		"text":"Once you have zeroed your tool, you can use the control wheels, power feed, and the do one feature to machine a wide variety of shapes. For complicated shapes, however, it'll be easier to program the machine to run a cycle.",
+		"text":"Once you have zeroed your tool, you can use the control wheels, power feed, and the do one feature to machine a wide variety of shapes. For complicated shapes, however, it'll be easier to program the machine to run a cycle."
 	}
 ]
