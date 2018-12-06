@@ -62,7 +62,7 @@ module.exports = function (app, config) {
 			});
 
 			// external module for handling favourite icon
-			app.use(favicon(__dirname + '/../public/img/favicon.ico'));
+			app.use(favicon(__dirname + '/../public/imgs/favicon.ico'));
 
 			// view engine
 			app.set('views', config.root + '/public/views');

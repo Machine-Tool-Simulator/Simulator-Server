@@ -1,0 +1,99 @@
+html
+    head
+        style
+            include ../css/styles.css
+        title=pagetitle
+
+body
+    div(class='split left')
+        div
+            div(id='title') #{title}
+            if coversrc != null
+                img(id="cover", src=coversrc)
+            if videourl != null
+                iframe(id='player', style='display:none', frameborder='0', src=videourl)
+            p(id='description') #{description}
+
+    div(class='split right', style='padding-top: 0px;')
+        div(id='Timer') Time Left 
+            span(id='timer')
+        section(class='control-panel')
+            div(class='leftControlBtn')
+                button(class='rbtn1', id='sys')
+                    strong SYS
+                button(class='rbtn1', id='upbtn')
+                    img(src='public/imgs/UU.png')
+                button(class='rbtn1', id='downbtn')
+                    img(src='public/imgs/DD.png')
+                button(class='rbtn1', id='help')
+                    strong HELP
+                button(class='rbtn1', id='back')
+                    strong BACK
+            
+            div(class='readout-full')
+                div(class='logo')
+                    img(src='public/imgs/redbtn.png', id='redbtn')
+                    img(src='public/imgs/logo.png', id='readout-logo')
+
+                div(class='readout')
+                    div(class='XZ-coord')
+                        div(class='x-coord')
+                            p
+                                label X:
+                                input(id='xvar', type='text', value='', name='xvar' disabled)
+                                br
+                        div(class='z-coord')
+                            p
+                                label Z:
+                                input(id='zvar', type='text', value='', name='zvar' disabled)
+                                br
+
+                    div(class='text-field')
+                        div(class='text_row1')
+                            p(id='p1')
+                                label(id='tx1') SPINDLE RPM 
+                                input(id='rpm', type='text', value='', name='rpm', disabled)
+                                br
+                            p(id='p1')
+                                label(id='tx1') Override 
+                                input(id='overwrite', type='text', value='', name='overwrite', disabled)
+                                br
+                        div(class='text_row1')
+                            p(id='p2')
+                                label(id='tx1') Feed Rate 
+                                input(id='frate', type='text', value='', name='frate', disabled)
+                                br
+                            p(id='p1')
+                                label(id='tx1') Override
+                                input(id='overwrite', type='text', value='', name='overwrite', disabled)
+                                br
+                    
+                    input(type='text', value='', id='buffer', readonly)
+
+                    div(class='function')
+                        div(class='fnumber')
+                            label(id='h1') F1
+                            textarea(id='f1', disabled) (TAPER)
+                        div(class='fnumber')
+                            label(id='h1') F2
+                            textarea(id='f2', disabled) POWER FEED
+                        div(class='fnumber')
+                            label(id='h1') F3
+                            textarea(id='f3', disabled) DO ONE
+                        div(class='fnumber')
+                            label(id='h1') F4
+                            textarea(id='f4', disabled) GO TO
+                        div(class='fnumber')
+                            label(id='h1') F5
+                            textarea(id='f5', disabled) MAX RPM
+                        div(class='fnumber')
+                            label(id='h1') F6
+                            textarea(id='f6', disabled) RETURN HOME
+                        div(class='fnumber')
+                            label(id='h1') F7
+                            textarea(id='f7', disabled) SPIN SPEED
+                        div(class='fnumber')
+                            label(id='h1') F8
+                            textarea(id='f8', disabled) TOOL # (RETURN)
+
+                    
