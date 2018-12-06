@@ -1,9 +1,12 @@
 const ROUTES = {
 	INDEX: '/',
+	LATHE: '/lathe',
+	DEPLOY: '/deploy',
 };
 
 const COLLECTION = {
 	STATUS: 'status',
+	MODULES: 'modules',
 };
 
 const CONSTANTS = {
