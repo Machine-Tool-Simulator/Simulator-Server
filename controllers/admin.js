@@ -3,7 +3,7 @@ import SECRETS from '../secret';
 import config from '../config/config';
 import fs from 'fs';
 import glob from 'glob';
-import manager from '../helpers/manager';
+import { handleError, ERROR_TYPE } from '../helpers/manager';
 
 function extractModuleNameFromPath(path) {
 	let splitted = path.split('/');
@@ -14,7 +14,7 @@ module.exports = (app, db) => {
 
 	app.post(CONSTANTS.ROUTES.DEPLOY, (req, res) => {
 		if (req.body.adminPassword !== SECRETS.ADMIN_PASSWORD) {
-			manager.handleError(manager.ERROR_TYPE.AUTHENTICATION, null, res);
+			handleError(ERROR_TYPE.AUTHENTICATION, null, res);
 			return;
 		}
 
@@ -27,7 +27,7 @@ module.exports = (app, db) => {
 					name: extractModuleNameFromPath(path),
 					courses: jsonArray,
 				}, err => {
-					if (err) manager.handleError(manager.ERROR_TYPE.DATABASE, 'Failed to insert modules into database', res);
+					if (err) handleError(ERROR_TYPE.DATABASE, 'Failed to insert modules into database', res);
 					else {
 						res.status(200).json({
 							msg: 'Deploy Succesful',
