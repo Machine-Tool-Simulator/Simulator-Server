@@ -3,7 +3,7 @@ import manager from '../helpers/manager';
 
 module.exports = (app, db) => {
 	
-	app.get(CONSTANTS.ROUTES.INDEX, (req, res, next) => {
+	app.get(CONSTANTS.ROUTES.INDEX, (_, res) => {
 		db.collection(CONSTANTS.COLLECTION.STATUS).findOne({
 			name: 'status',
 		}, (err, doc) => {
@@ -17,4 +17,4 @@ module.exports = (app, db) => {
 		});
 	});
 
-}
+};
