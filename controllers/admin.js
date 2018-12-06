@@ -5,6 +5,11 @@ import fs from 'fs';
 import glob from 'glob';
 import manager from '../helpers/manager';
 
+function extractModuleNameFromPath(path) {
+	let splitted = path.split('/');
+	return splitted[splitted.length - 1].slice(0, -5);
+}
+
 module.exports = (app, db) => {
 
 	app.post(CONSTANTS.ROUTES.DEPLOY, (req, res) => {
@@ -15,10 +20,12 @@ module.exports = (app, db) => {
 
 		db.collection(CONSTANTS.COLLECTION.MODULES).drop((err, _) => {	// eslint-disable-line no-unused-vars
 			const modules = glob.sync(config.root + '/public/modules/*.json');
-			modules.forEach(module => {
-				let jsonArray = JSON.parse(fs.readFileSync(module));
+			modules.forEach(path => {
+				let jsonArray = JSON.parse(fs.readFileSync(path));
+
 				db.collection(CONSTANTS.COLLECTION.MODULES).insertOne({
-					steps: jsonArray,
+					name: extractModuleNameFromPath(path),
+					courses: jsonArray,
 				}, err => {
 					if (err) manager.handleError(manager.ERROR_TYPE.DATABASE, 'Failed to insert modules into database', res);
 					else {
