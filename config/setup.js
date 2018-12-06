@@ -34,7 +34,7 @@ module.exports = function (app, config) {
 					db.collection(CONSTANTS.COLLECTION.STATUS).insertOne({
 						name: 'status',
 						running: true
-					}, (err) => {
+					}, err => {
 						if (err) {
 							console.error(err);
 							client.close();
@@ -44,6 +44,11 @@ module.exports = function (app, config) {
 					});
 				}
 			});
+
+			app.use(bodyParser.json());
+			app.use(bodyParser.urlencoded({
+				extended: true
+			}));
 
 			const controllers = glob.sync(config.root + '/controllers/*.js');
 			controllers.forEach(controller => {
@@ -55,11 +60,6 @@ module.exports = function (app, config) {
 				// call the default function that's exported, with app as a parameter.
 				// Those default functions just say 'hey app, use these routes.'"
 			});
-
-			app.use(bodyParser.json());
-			app.use(bodyParser.urlencoded({
-				extended: true
-			}));
 
 			// external module for handling favourite icon
 			app.use(favicon(__dirname + '/../public/img/favicon.ico'));
@@ -88,16 +88,14 @@ module.exports = function (app, config) {
 			});
 
 			app.use((err, req, res, next) => {
-				console.error(err);
 				res.status(err.status || 500);
 				res.json({ error: err.message });
 				next(err);
 			});
 
 
-			// listening on port 3000
-			server = app.listen(3000, function () {
-				console.log('\nServer listening on port 3000...\n');		// eslint-disable-line no-console
+			server = app.listen(config.port, function () {
+				console.log(`\nServer listening on port ${config.port}...\n`);		// eslint-disable-line no-console
 			});
 		}
 	});
