@@ -35,7 +35,7 @@ module.exports = (app) => {
 			id: id,
 		};
 		results.map((val, index) => {
-			record['index + 1'.toString()] = val;
+			record[index + 1] = val;
 		});
 		record['timestamp'] = new Date();
 
