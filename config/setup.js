@@ -3,6 +3,7 @@ import logger from 'morgan';
 import glob from 'glob';
 import favicon from 'serve-favicon';
 import fs from 'fs';
+import { handleError } from '../helpers/manager';
 
 let server;
 

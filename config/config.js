@@ -9,6 +9,7 @@ const config = {
 		app: {
 			name: 'mts-server'
 		},
+		dataPath: rootPath + '/../data/results.csv',
 		port: 3000,
 	},
 
@@ -17,6 +18,7 @@ const config = {
 		app: {
 			name: 'mts-server'
 		},
+		dataPath: rootPath + '/data/results.csv',
 		port: 3000,
 	},
 
@@ -25,6 +27,7 @@ const config = {
 		app: {
 			name: 'mts-server'
 		},
+		dataPath: rootPath + '/data/results.csv',
 		port: 3000,
 	}
 };
