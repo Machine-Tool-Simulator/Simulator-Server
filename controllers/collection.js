@@ -11,7 +11,7 @@ module.exports = (app) => {
 		if (!req.body) handleError('No data submitted', res);
 
 		let id = req.body.id;
-		let results = JSON.parse(req.body.results);
+		let results = req.body.results;
 		
 		if (results.length != NUM_PAGES) handleError('Incorrect data length', res);
 		
