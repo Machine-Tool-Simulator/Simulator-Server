@@ -2,7 +2,6 @@
 /data
 /dist
 package-lock.json
-secret.js
 
 # Platforms
 .DS_Store
