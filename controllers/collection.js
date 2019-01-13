@@ -14,7 +14,7 @@ module.exports = (app) => {
 		let results = req.body.results;
 		
 		if (results.length != NUM_PAGES) handleError('Incorrect data length', res);
-		
+
 		// formulate header
 		let header = [
 			{ id: 'id', title: 'id' },
@@ -25,14 +25,19 @@ module.exports = (app) => {
 				title: i,
 			});
 		};
+		header.push({
+			id: 'timestamp',
+			title: 'timestamp',
+		});
 
 		// compose individual record
 		let record = {
 			id: id,
 		};
 		results.map((val, index) => {
-			record[index + 1] = val;
+			record['index + 1'.toString()] = val;
 		});
+		record['timestamp'] = new Date();
 
 		let writer = csvWriter.createObjectCsvWriter({
 			path: config.dataPath,
