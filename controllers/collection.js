@@ -24,7 +24,7 @@ module.exports = (app) => {
 				id: i,
 				title: i,
 			});
-		};
+		}
 		header.push({
 			id: 'timestamp',
 			title: 'timestamp',

@@ -3,7 +3,6 @@ import logger from 'morgan';
 import glob from 'glob';
 import favicon from 'serve-favicon';
 import fs from 'fs';
-import { handleError } from '../helpers/manager';
 
 let server;
 
@@ -15,7 +14,7 @@ module.exports = function (app, config) {
 		extended: true
 	}));
 
-	app.options("/*", function (req, res, next) {
+	app.options('/*', function (req, res) {
 		res.header('Access-Control-Allow-Origin', '*');
 		res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
 		res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
