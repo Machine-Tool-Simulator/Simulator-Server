@@ -2,10 +2,34 @@ import CONSTANTS from '../config/constants';
 import { handleError } from '../helpers/manager';
 import csvWriter from 'csv-writer';
 import config from '../config/config';
+import fs from 'fs';
 
 const NUM_PAGES = 16;
 
 module.exports = (app) => {
+	
+	app.post(CONSTANTS.ROUTES.BEGIN, (req, res) => {
+		if (!req.body) handleError('No data submitted', res);
+
+		let id = req.body.id;
+		let output = [];
+		if (fs.existsSync(config.beginPath)) {
+			let beginners = fs.readFileSync(config.beginPath).toString().split(',');
+			beginners.forEach(b => {
+				output.push(b);
+			});
+		}
+		
+		if (!output.includes(id)) {
+			output.push(id);
+		}
+
+		fs.writeFile(config.beginPath, output, () => {});
+
+		res.status(200).json({
+			error: null,
+		});
+	});
 	
 	app.post(CONSTANTS.ROUTES.SUBMIT, (req, res) => {
 		if (!req.body) handleError('No data submitted', res);

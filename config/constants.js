@@ -1,5 +1,6 @@
 const ROUTES = {
 	INDEX: '/',
+	BEGIN: '/begin',
 	SUBMIT: '/submit',
 };
 

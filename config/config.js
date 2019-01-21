@@ -10,6 +10,7 @@ const config = {
 			name: 'mts-server'
 		},
 		dataPath: rootPath + '/../data/results.csv',
+		beginPath: rootPath + '/../data/begin.txt',
 		port: 3001,
 	},
 
@@ -19,6 +20,7 @@ const config = {
 			name: 'mts-server'
 		},
 		dataPath: rootPath + '/data/results.csv',
+		beginPath: rootPath + '/../data/begin.txt',
 		port: 3001,
 	},
 
@@ -28,6 +30,7 @@ const config = {
 			name: 'mts-server'
 		},
 		dataPath: rootPath + '/data/results.csv',
+		beginPath: rootPath + '/../data/begin.txt',
 		port: 3001,
 	}
 };
