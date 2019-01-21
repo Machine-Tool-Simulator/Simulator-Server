@@ -14,6 +14,7 @@ module.exports = (app) => {
 
 		if (!fs.existsSync(config.beginPath)) {
 			res.status(200).send('User has not started');
+			return;
 		}
 
 		fs.readFile(config.beginPath, (err, data) => {
