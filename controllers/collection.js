@@ -8,6 +8,27 @@ const NUM_PAGES = 16;
 
 module.exports = (app) => {
 	
+	app.get(CONSTANTS.ROUTES.CHECK_BEGIN, (req, res) => {
+		console.log(req.query);
+		let id = req.query.id;
+
+		if (!fs.existsSync(config.beginPath)) {
+			res.status(200).send('User has not started');
+		}
+
+		fs.readFile(config.beginPath, (err, data) => {
+			if (err) res.status(500).send('Unknown error');
+			else {
+				let beginners = data.toString().split(',');
+				if (beginners.includes(id)) {
+					res.status(200).send('User started');
+				} else {
+					res.status(200).send('User has not started');
+				}
+			}
+		});
+	});
+
 	app.post(CONSTANTS.ROUTES.BEGIN, (req, res) => {
 		if (!req.body) handleError('No data submitted', res);
 
